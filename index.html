@@ -27,7 +27,14 @@
           "Hello Ultra!"
         );
       }
-      ReactDOM.render(title(), document.getElementById("app"));
+      function paragraph() {
+        return React.createElement("h2", null, "El hijo de h1 del titulo");
+      }
+
+      function container() {
+          return React.createElement("section", null, title(), paragraph())
+      }
+      ReactDOM.render(container(), document.getElementById("app"));
     </script>
   </body>
 </html>
