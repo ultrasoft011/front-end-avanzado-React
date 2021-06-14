@@ -21,9 +21,13 @@
     <!-- The code -->
     <script type="text/javascript">
       function title() {
-        return React.createElement("h1", null, "Hello Ultra!");
+        return React.createElement(
+          "h1",
+          { style: { color: "red" } },
+          "Hello Ultra!"
+        );
       }
-      ReactDOM.render(title(), document.getElementById('app'));
+      ReactDOM.render(title(), document.getElementById("app"));
     </script>
   </body>
 </html>
