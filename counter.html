@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter: First React App</title>
+  </head>
+  <body>
+    <!-- The empty container with id='app' here is where the application will run -->
+    <div id="app"></div>
+
+    <!-- Dependencias de las librerias React y ReactDOM. Compilador de Babel -->
+
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- BABEL -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- The code will be here-->
+
+    <script type="text/javascript">
+    let seconds = 50000;
+      function TimeLeft() {
+        let monthsLeft;
+        let daysLeft;
+        let yearsLeft;
+        // Current date
+        const currentDate = new Date();
+        const [month, day, year] = [
+          currentDate.getMonth(),
+          currentDate.getDate(),
+          currentDate.getFullYear(),
+        ];
+        // End date
+        const endDate = new Date("2021-07-30");
+        const [month1, day1, year1] = [
+          endDate.getMonth(),
+          endDate.getDate(),
+          endDate.getFullYear(),
+        ];
+        monthLeft = month1 - month;
+        daysLeft = day1 - day;
+        yearsLeft = year1 - year;
+        return React.createElement(
+          "h1",
+          null,
+          `Hacen falta ${daysLeft} días y ${monthLeft} meses para finalizar el curso, ${seconds} segundos restantes`
+        );
+      }
+      // window -> setInterval
+      window.setInterval(function() {
+          seconds--;
+          ReactDOM.render(TimeLeft(), document.getElementById("app"));
+      }, 1000);
+      ReactDOM.render(TimeLeft(), document.getElementById("app"));
+    </script>
+  </body>
+</html>
