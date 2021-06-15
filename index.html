@@ -20,21 +20,33 @@
 
     <!-- The code -->
     <script type="text/javascript">
-      function title() {
-        return React.createElement(
-          "h1",
-          { style: { color: "red" } },
-          "Hello Ultra!"
-        );
-      }
-      function paragraph() {
-        return React.createElement("h2", null, "El hijo de h1 del titulo");
-      }
+      // function title() {
+      //   return React.createElement(
+      //     "h1",
+      //     { style: { color: "red" } },
+      //     "Hello Ultra!"
+      //   );
+      // }
+      // function paragraph() {
+      //   return React.createElement("h2", null, "El hijo de h1 del titulo");
+      // }
 
-      function container() {
-          return React.createElement("section", null, title(), paragraph())
+      // function container() {
+      //     return React.createElement("section", null, title(), paragraph())
+      // }
+      //
+      // Counter in the window. // Window object represents an open window in a browser.
+      //
+      let seconds = 0;
+      // Counter function, the third parameter 'seconds' will be display in the browser counting every second.
+      function counter() {
+        return React.createElement("h1", null, seconds);
       }
-      ReactDOM.render(container(), document.getElementById("app"));
+      // window with setInterval
+      window.setInterval(function () {
+        seconds++; // Increment by 1 of seconds.
+        ReactDOM.render(counter(), document.getElementById("app"));
+      }, 1000);
     </script>
   </body>
 </html>
