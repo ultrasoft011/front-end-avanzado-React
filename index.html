@@ -17,9 +17,11 @@
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
       crossorigin
     ></script>
+    <!-- BABEL -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- The code -->
-    <script type="text/javascript">
+    <script type="text/babel">
       // function title() {
       //   return React.createElement(
       //     "h1",
@@ -43,10 +45,18 @@
         return React.createElement("h1", null, seconds);
       }
       // window with setInterval
-      window.setInterval(function () {
-        seconds++; // Increment by 1 of seconds.
-        ReactDOM.render(counter(), document.getElementById("app"));
-      }, 1000);
+      // window.setInterval(function () {
+      //   seconds++; // Increment by 1 of seconds.
+      //   ReactDOM.render(counter(), document.getElementById("app"));
+      // }, 1000);
+      // ReactDOM.render(counter(), document.getElementById("app"));
+      //
+      // Crear un elemento de React utilizando JSX
+      // 
+      function Title() {
+        return <h1>Hello Andres!</h1>
+      }
+      ReactDOM.render(Title(), document.getElementById("app"));
     </script>
   </body>
 </html>
