@@ -25,38 +25,39 @@
 
     <!-- The code will be here-->
 
-    <script type="text/javascript">
+    <script type="text/babel">
     let seconds = 50000;
       function TimeLeft() {
-        let monthsLeft;
-        let daysLeft;
-        let yearsLeft;
+        // let monthsLeft;
+        // let daysLeft;
+        // let yearsLeft;
         // Current date
-        const currentDate = new Date();
-        const [month, day, year] = [
-          currentDate.getMonth(),
-          currentDate.getDate(),
-          currentDate.getFullYear(),
-        ];
+        // const currentDate = new Date();
+        // const [month, day, year] = [
+        //   currentDate.getMonth(),
+        //   currentDate.getDate(),
+        //   currentDate.getFullYear(),
+        // ];
         // End date
-        const endDate = new Date("2021-07-30");
-        const [month1, day1, year1] = [
-          endDate.getMonth(),
-          endDate.getDate(),
-          endDate.getFullYear(),
-        ];
-        monthLeft = month1 - month;
-        daysLeft = day1 - day;
-        yearsLeft = year1 - year;
-        return React.createElement(
-          "h1",
-          null,
-          `Hacen falta ${daysLeft} días y ${monthLeft} meses para finalizar el curso, ${seconds} segundos restantes`
-        );
+        let endDateSeconds = new Date("2021-07-30").getTime();
+        let difference = endDateSeconds - new Date().getTime();
+        // const endDate = new Date("2021-07-30");
+        // const [month1, day1, year1] = [
+        //   endDate.getMonth(),
+        //   endDate.getDate(),
+        //   endDate.getFullYear(),
+        // ];
+        // monthLeft = month1 - month;
+        // daysLeft = day1 - day;
+        // yearsLeft = year1 - year;
+        return (
+            <h1>
+                {difference}
+            </h1>
+        )
       }
       // window -> setInterval
       window.setInterval(function() {
-          seconds--;
           ReactDOM.render(TimeLeft(), document.getElementById("app"));
       }, 1000);
       ReactDOM.render(TimeLeft(), document.getElementById("app"));
