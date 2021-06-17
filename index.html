@@ -22,41 +22,49 @@
 
     <!-- The code -->
     <script type="text/babel">
-      // function title() {
-      //   return React.createElement(
-      //     "h1",
-      //     { style: { color: "red" } },
-      //     "Hello Ultra!"
-      //   );
+      // // function title() {
+      // //   return React.createElement(
+      // //     "h1",
+      // //     { style: { color: "red" } },
+      // //     "Hello Ultra!"
+      // //   );
+      // // }
+      // // function paragraph() {
+      // //   return React.createElement("h2", null, "El hijo de h1 del titulo");
+      // // }
+
+      // // function container() {
+      // //     return React.createElement("section", null, title(), paragraph())
+      // // }
+      // //
+      // // Counter in the window. // Window object represents an open window in a browser.
+      // //
+      // let seconds = 0;
+      // // Counter function, the third parameter 'seconds' will be display in the browser counting every second.
+      // function counter() {
+      //   return React.createElement("h1", null, seconds);
       // }
-      // function paragraph() {
-      //   return React.createElement("h2", null, "El hijo de h1 del titulo");
+      // // window with setInterval
+      // // window.setInterval(function () {
+      // //   seconds++; // Increment by 1 of seconds.
+      // //   ReactDOM.render(counter(), document.getElementById("app"));
+      // // }, 1000);
+      // // ReactDOM.render(counter(), document.getElementById("app"));
+      // //
+      // // Crear un elemento de React utilizando JSX
+      // // 
+      // function Title() {
+      //   return <h1>Hello Andres!</h1>
       // }
 
-      // function container() {
-      //     return React.createElement("section", null, title(), paragraph())
-      // }
-      //
-      // Counter in the window. // Window object represents an open window in a browser.
-      //
-      let seconds = 0;
-      // Counter function, the third parameter 'seconds' will be display in the browser counting every second.
-      function counter() {
-        return React.createElement("h1", null, seconds);
+      class Andres extends React.Component {
+        render() {
+        return (
+          <h1> La copa es de Andres </h1>
+        )
       }
-      // window with setInterval
-      // window.setInterval(function () {
-      //   seconds++; // Increment by 1 of seconds.
-      //   ReactDOM.render(counter(), document.getElementById("app"));
-      // }, 1000);
-      // ReactDOM.render(counter(), document.getElementById("app"));
-      //
-      // Crear un elemento de React utilizando JSX
-      // 
-      function Title() {
-        return <h1>Hello Andres!</h1>
-      }
-      ReactDOM.render(Title(), document.getElementById("app"));
+    };
+      ReactDOM.render(, document.getElementById("app"));
     </script>
   </body>
 </html>

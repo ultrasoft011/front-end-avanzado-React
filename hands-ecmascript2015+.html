@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hands-ECMAScript 2015+</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function cicloFor () {
-        const max = 10;
-        const iterable = new Array(max);
+      const max = 10000;
+      const iterable = new Array(max);
+      iterable.fill(Math.floor(Math.random() * 100));
+
+      function runFor() {
+        let copy = [];
         for (let i = 0; i < iterable.length; i++) {
-            iterable.fill(Math.floor(Math.random() * Math.floor(100)))
+          copy.push(iterable[i]);
         }
-        return iterable;
-    }
-    console.log(cicloFor());
+        return copy;
+      }
+
+      function runMap() {
+        let newArray = runFor();
+        const newMap = newArray.map((x) => x * 2);
+        return newMap;
+      }
+
+      console.time("for");
+      console.log(runFor());
+      console.timeEnd("for");
+
+      console.time("for");
+      console.log(runMap());
+      console.timeEnd("for");
     </script>
-    
-</body>
+  </body>
 </html>
