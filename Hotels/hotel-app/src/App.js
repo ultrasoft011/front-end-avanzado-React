@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import today from "./data";
+import DateFilter from "./date-filter";
 
 // Componentes tipo arrow function.
 // const Hero = (filters) => {
@@ -53,6 +54,7 @@ function App() {
     <div>
       {/* <Hero filters={filters} /> */}
       <Hero2 filters={filters} />
+      <DateFilter />
       {/* {console.log(filters)} */}
     </div>
   );
